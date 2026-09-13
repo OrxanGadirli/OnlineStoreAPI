@@ -2,12 +2,13 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'NodeJS'
+        nodejs 'mynodejs'
     }
 
     stages {
         stage('Checkout Code') {
             steps {
+                // Automatically pulls the GitHub repository
                 checkout scm
             }
         }
@@ -24,6 +25,7 @@ pipeline {
 
     post {
         always {
+            // Archives the HTML report in Jenkins
             publishHTML(target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
