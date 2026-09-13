@@ -1,16 +1,14 @@
-Groovy
-
 pipeline {
     agent any
 
     tools {
-        nodejs 'mynodejs' 
+        nodejs 'NodeJS'
     }
 
     stages {
         stage('Checkout Code') {
+            // Automatically pulls the GitHub repository
             steps {
-                // Automatically pulls the GitHub repository
                 checkout scm
             }
         }
