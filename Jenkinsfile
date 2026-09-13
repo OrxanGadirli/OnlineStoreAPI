@@ -7,7 +7,6 @@ pipeline {
 
     stages {
         stage('Checkout Code') {
-            // Automatically pulls the GitHub repository
             steps {
                 checkout scm
             }
@@ -25,7 +24,6 @@ pipeline {
 
     post {
         always {
-            // Archives the HTML report in Jenkins
             publishHTML(target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
